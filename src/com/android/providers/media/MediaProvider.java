@@ -1199,7 +1199,7 @@ public class MediaProvider extends ContentProvider {
         final ComponentName componentName = new ComponentName(getContext().getPackageName(),
                 photoPickerGetContentActivity);
 
-        final int expectedState = getBooleanDeviceConfig(TAKE_OVER_GET_CONTENT, false)
+        final int expectedState = getBooleanDeviceConfig(TAKE_OVER_GET_CONTENT, true)
                 ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED
                 : PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
 
