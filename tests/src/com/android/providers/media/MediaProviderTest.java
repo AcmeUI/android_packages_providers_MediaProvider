@@ -679,6 +679,11 @@ public class MediaProviderTest {
             public int getCallingPackageTargetSdkVersion() {
                 return Build.VERSION_CODES.Q;
             }
+
+            @Override
+            protected void checkDeviceConfigAndUpdateGetContentAlias() {
+                // Ignore this as test app cannot read device config
+            }
         };
 
         final ProviderInfo info = sIsolatedContext.getPackageManager()
@@ -1105,6 +1110,11 @@ public class MediaProviderTest {
             @Override
             public int getCallingPackageTargetSdkVersion() {
                 return Build.VERSION_CODES.CUR_DEVELOPMENT;
+            }
+
+            @Override
+            protected void checkDeviceConfigAndUpdateGetContentAlias() {
+                // Ignore this as test app cannot read device config
             }
         };
         final ProviderInfo info = sIsolatedContext.getPackageManager()
